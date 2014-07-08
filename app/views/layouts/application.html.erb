@@ -10,9 +10,16 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-  <p class="notice alert-box success"><%= notice %></p>
-  <p class="alert alert-box alert"><%= alert %></p>
+
   <body>
+  <div class="row">
+    <% if notice %>
+      <p class="notice alert-box success large-6 colums large-centered"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-box alert large-6 colums large-centered"><%= alert %></p>
+    <% end %>
+    </div>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
