@@ -14,12 +14,18 @@
   <body>
   <div class="row">
     <% if notice %>
-      <p class="notice alert-box success large-6 colums large-centered"><%= notice %></p>
+      <div data-alert class="notice alert-box success large-6 colums large-centered">
+        <%= notice %></p>
+        <a href="#" class="close">&times;</a>
+      </div>
     <% end %>
     <% if alert %>
-      <p class="alert alert-box alert large-6 colums large-centered"><%= alert %></p>
+      <div data-alert class="alert alert-box alert large-6 colums large-centered">
+        <%= alert %></p>
+        <a href="#" class="close">&times;</a>
+      </div>
     <% end %>
-    </div>
+  </div>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
