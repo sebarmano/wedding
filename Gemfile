@@ -50,3 +50,4 @@ gem 'binding_of_caller'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'rails_12factor', group: :production
+gem 'postmark-rails', group: :production
