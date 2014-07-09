@@ -2,10 +2,10 @@
 
 one:
   user_id: 
-  content: MyText
   caption: MyString
+  content: MyString
 
 two:
   user_id: 
-  content: MyText
   caption: MyString
+  content: MyString
