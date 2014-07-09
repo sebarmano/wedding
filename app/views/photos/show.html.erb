@@ -1,29 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Index:</strong>
-  <%= @photo.index %>
+  <strong>Photo:</strong>
+  <%= image_tag @photo.content_url if @photo.content? %>
 </p>
 
 <p>
-  <strong>Show:</strong>
-  <%= @photo.show %>
+  <strong>Caption:</strong>
+  <%= @photo.caption %>
 </p>
 
-<p>
-  <strong>Edit:</strong>
-  <%= @photo.edit %>
-</p>
-
-<p>
-  <strong>Update:</strong>
-  <%= @photo.update %>
-</p>
-
-<p>
-  <strong>Delete:</strong>
-  <%= @photo.delete %>
-</p>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

@@ -3,23 +3,18 @@
 <table>
   <thead>
     <tr>
-      <th>Index</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Update</th>
-      <th>Delete</th>
-      <th colspan="3"></th>
+      <th>Photo</th>
+      <th>Caption</th>
+      <th>Uploaded by</th>
     </tr>
   </thead>
 
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.index %></td>
-        <td><%= photo.show %></td>
-        <td><%= photo.edit %></td>
-        <td><%= photo.update %></td>
-        <td><%= photo.delete %></td>
+        <td><%= image_tag photo.content_url if photo.content? %></td>
+        <td><%= photo.caption %></td>
+        <td><%= photo.user.fname %></td>
         <td><%= link_to 'Show', photo %></td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
