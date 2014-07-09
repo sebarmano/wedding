@@ -12,7 +12,7 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= image_tag photo.content_url if photo.content? %></td>
+        <td><%= image_tag photo.content.thumb.url if photo.content? %></td>
         <td><%= photo.caption %></td>
         <td><%= photo.user.fname %></td>
         <td><%= link_to 'Show', photo %></td>
