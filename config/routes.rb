@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   get 'home/index'
-  resources :events
+
   resources :photos
+
+  resources :events do
+     get 'tags/:tag' => 'events#tags', :on => :collection, :as => :tag
+     get :autocomplete_tags_name, :on => :collection
+  end
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

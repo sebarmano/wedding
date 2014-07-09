@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  autocomplete :tags, :name
 
   # GET /events
   # GET /events.json
@@ -63,6 +64,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def tags
+    @tag = params[:tag]
+    @events = Event.tagged_with(@tag)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -71,6 +77,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :datetime)
+      params.require(:event).permit(:title, :description, :datetime, :tag_list)
     end
 end
