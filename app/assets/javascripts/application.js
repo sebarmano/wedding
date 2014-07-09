@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require foundation
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$('#event_tag_list').autocomplete({source: ["test", "test2", "test3", "photo", "decoration"]})

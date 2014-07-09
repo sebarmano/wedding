@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :events do
      get 'tags/:tag' => 'events#tags', :on => :collection, :as => :tag
+     get :autocomplete_tags_name, :on => :collection
   end
 
   devise_for :users
