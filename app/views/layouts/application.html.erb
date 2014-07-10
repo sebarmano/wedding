@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "wedding-planner" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "wedding-planner" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Plan W", user_root_path %></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if current_user %>
+        <li><%= link_to "Logged in as #{current_user.fname}", "#" %></li>
+        <li class="active"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li class="active"><%= link_to "Log In", new_user_session_path, class:"active" %></li>
+        <% end %>
+      </li>
+    </ul>
+  </section>
+</nav>
+
+<p>
   <div class="row">
     <% if notice %>
-      <div data-alert class="notice alert-box success large-6 colums large-centered">
-        <%= notice %></p>
-        <a href="#" class="close">&times;</a>
-      </div>
+    <div data-alert class="alert-box success">
+      <%= notice %></p>
+      <a href="#" class="close">&times;</a>
+    </div>
     <% end %>
     <% if alert %>
-      <div data-alert class="alert alert-box alert large-6 colums large-centered">
-        <%= alert %></p>
-        <a href="#" class="close">&times;</a>
-      </div>
+    <div data-alert class="alert-box alert large-6 colums large-centered">
+      <%= alert %></p>
+      <a href="#" class="close">&times;</a>
+    </div>
     <% end %>
   </div>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
-  </body>
+</p>
+
+
+<%= yield %>
+<%= javascript_include_tag "application" %>
+</body>
 </html>

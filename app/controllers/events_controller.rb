@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    
   end
 
   # GET /events/1
@@ -15,7 +15,11 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+    if current_user.couple?
+      @event = Event.new
+    else
+      redirect_to user_root_path, alert: "You are not allowed to create Events."
+    end
   end
 
   # GET /events/1/edit

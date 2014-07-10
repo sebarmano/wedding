@@ -3,6 +3,6 @@ class Event < ActiveRecord::Base
 	acts_as_taggable
 
 
-  belongs_to :creator, class_name: "User"
-  has_many :users, through: :answers
+  belongs_to :user
+  
 end

@@ -21,3 +21,5 @@ $(function(){ $(document).foundation(); });
 
 // $('#event_tag_list').autocomplete({source: ["test", "test2", "test3", "photo", "decoration"]})
 // $('#event_tag_list').autocomplete({source: })
+
+$('.alert-box').delay(5000).fadeOut(500);
