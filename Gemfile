@@ -56,4 +56,4 @@ gem 'postmark-rails', group: :production
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts-as-taggable-on'
-gem 'rails3-jquery-autocomplete'
+
