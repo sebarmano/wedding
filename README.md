@@ -20,3 +20,5 @@ Have access to events on the wedding, and can create new groups with more events
 Can be "added" to any wedding, and can only see their business with the couple, via private chats in the app.
 
 The app also gives the possibility to the couple or guests of adding pictures, that can be tagged.
+
+The app is currently in early development stage.
